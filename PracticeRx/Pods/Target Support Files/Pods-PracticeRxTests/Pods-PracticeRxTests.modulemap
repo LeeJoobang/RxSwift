@@ -1,0 +1,6 @@
+framework module Pods_PracticeRxTests {
+  umbrella header "Pods-PracticeRxTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
