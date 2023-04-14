@@ -45,7 +45,7 @@ Observable<String>.create { observer in
 ).disposed(by: disposebag)
 */
 
-
+/*
 let disposeBag = DisposeBag()
 
 let relay = BehaviorRelay(value: ["item1"])
@@ -60,3 +60,107 @@ relay.asObservable()
         print($0)
     }
 
+*/
+
+//let strikes = PublishSubject<String>()
+//let disposebag = DisposeBag()
+//strikes.elementAt(2)
+//    .subscribe(onNext: { _ in
+//        print("You are out")
+//    }).disposed(by: disposebag)
+//
+//strikes.onNext("x")
+//strikes.onNext("x")
+//strikes.onNext("x")
+
+
+//let disposeBag = DisposeBag()
+//let observable = Observable.of(1, 2, 3, 4, 5, 6)
+//
+//observable
+//    .skip(4)
+//    .subscribe(onNext: { element in
+//        print("Next:", element)
+//    }, onError: { error in
+//        print("Error:", error)
+//    }, onCompleted: {
+//        print("Completed")
+//    })
+//    .disposed(by: disposeBag)
+
+
+//let disposeBag = DisposeBag()
+//let observable = Observable.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+//
+//observable
+//    .skipWhile { $0 < 5 } // 5 미만의 요소를 건너뛰는 조건입니다.
+//    .subscribe(onNext: { element in
+//        print("Skipped while the element is less than 5:", element)
+//    }, onCompleted: {
+//        print("Completed")
+//    })
+//    .disposed(by: disposeBag)
+
+//let disposeBag = DisposeBag()
+//let observable = PublishSubject<String>()
+//let trigger = PublishSubject<Void>()
+//
+//observable
+//    .skip(until: trigger)
+//    .subscribe(onNext: { element in
+//        print("Skipped until trigger fired:", element)
+//    }, onCompleted: {
+//        print("Completed")
+//    })
+//    .disposed(by: disposeBag)
+//
+//observable.onNext("A")
+//observable.onNext("B")
+//trigger.onNext(())
+//observable.onNext("C")
+//observable.onNext("D")
+
+
+//let disposeBag = DisposeBag()
+//let observable = Observable.of("A", "B", "C", "D", "E")
+//
+//observable
+//    .take(3) // 처음 3개의 요소만 포함하는 시퀀스를 생성합니다.
+//    .subscribe(onNext: { element in
+//        print("Took first 3 elements:", element)
+//    }, onCompleted: {
+//        print("Completed")
+//    })
+//    .disposed(by: disposeBag)
+
+
+//let disposeBag = DisposeBag()
+//let observable = Observable.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+//
+//observable
+//    .takeWhile { $0 < 5 } // 조건이 참인 동안의 요소만 포함하는 시퀀스를 생성합니다.
+//    .subscribe(onNext: { element in
+//        print("Taking while element is less than 5:", element)
+//    }, onCompleted: {
+//        print("Completed")
+//    })
+//    .disposed(by: disposeBag)
+
+let disposeBag = DisposeBag()
+let observable = PublishSubject<String>()
+let trigger = PublishSubject<Void>()
+
+observable
+    .take(until: trigger)
+    .subscribe(onNext: { element in
+        print("Skipped until trigger fired:", element)
+    }, onCompleted: {
+        print("Completed")
+    })
+    .disposed(by: disposeBag)
+
+observable.onNext("A")
+observable.onNext("B")
+trigger.onNext(())
+observable.onNext("C")
+observable.onNext("D")
