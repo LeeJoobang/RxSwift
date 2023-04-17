@@ -146,21 +146,125 @@ relay.asObservable()
 //    })
 //    .disposed(by: disposeBag)
 
-let disposeBag = DisposeBag()
-let observable = PublishSubject<String>()
-let trigger = PublishSubject<Void>()
+//let disposeBag = DisposeBag()
+//let observable = PublishSubject<String>()
+//let trigger = PublishSubject<Void>()
+//
+//observable
+//    .take(until: trigger)
+//    .subscribe(onNext: { element in
+//        print("Skipped until trigger fired:", element)
+//    }, onCompleted: {
+//        print("Completed")
+//    })
+//    .disposed(by: disposeBag)
+//
+//observable.onNext("A")
+//observable.onNext("B")
+//trigger.onNext(())
+//observable.onNext("C")
+//observable.onNext("D")
 
-observable
-    .take(until: trigger)
-    .subscribe(onNext: { element in
-        print("Skipped until trigger fired:", element)
-    }, onCompleted: {
-        print("Completed")
-    })
-    .disposed(by: disposeBag)
 
-observable.onNext("A")
-observable.onNext("B")
-trigger.onNext(())
-observable.onNext("C")
-observable.onNext("D")
+//let disposebag = DisposeBag()
+//let observable = Observable.of(1, 2, 3, 4, 5)
+//
+//observable.map { event in
+//    return event * 2
+//}.subscribe { event in
+//    print(event)
+//}.disposed(by: disposebag)
+
+
+//let disposebag = DisposeBag()
+//
+//struct Student {
+//    var score: BehaviorRelay<Int>
+//
+//}
+//
+//let john = Student(score: BehaviorRelay(value: 75))
+//let mary = Student(score: BehaviorRelay(value: 93))
+//
+//let student = PublishSubject<Student>()
+//
+//student.asObservable()
+//    .flatMap { $0.score.asObservable() }
+//    .subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposebag)
+//
+//student.onNext(john)
+//student.onNext(mary)
+//
+//john.score.accept(100)
+//mary.score.accept(43 )
+//
+//let disposeBag = DisposeBag()
+//
+//let numbers = PublishSubject<Int>()
+
+// flatMap example
+//numbers
+//    .flatMap { number -> Observable<String> in
+//        print("flatMap: Number: \(number)")
+//        return Observable<String>
+//            .just("String: \(number)")
+//            .delay(.milliseconds(100 * number), scheduler: MainScheduler.instance)
+//    }
+//    .subscribe(onNext: { string in
+//        print("flatMap: \(string)")
+//    })
+//    .disposed(by: disposeBag)
+
+// flatMapLatest example
+//numbers
+//    .flatMapLatest { number -> Observable<String> in
+//        print("flatMapLatest: Number: \(number)")
+//        return Observable<String>
+//            .just("String: \(number)")
+//            .delay(.milliseconds(100 * number), scheduler: MainScheduler.instance)
+//    }
+//    .subscribe(onNext: { string in
+//        print("flatMapLatest: \(string)")
+//    })
+//    .disposed(by: disposeBag)
+//
+//// Emit numbers
+//numbers.onNext(1)
+//numbers.onNext(2)
+//numbers.onNext(3)
+
+// flatMap output:
+// flatMap: Number: 1
+// flatMap: Number: 2
+// flatMap: Number: 3
+// flatMap: String: 1
+// flatMap: String: 3
+// flatMap: String: 2
+
+// flatMapLatest output:
+// flatMapLatest: Number: 1
+// flatMapLatest: Number: 2
+// flatMapLatest: Number: 3
+// flatMapLatest: String: 3
+
+//let disposebag = DisposeBag()
+//
+//let first = Observable.of(1, 2, 3)
+//let second = Observable.of(4, 5, 6)
+//
+//
+//first.concat(second)
+//    .subscribe(onNext: {
+//        print($0)
+//    }).disposed(by: disposebag)
+
+let disposebag = DisposeBag()
+
+let source = Observable.of(1, 2, 3)
+
+source.reduce(0, accumulator: -)
+    .subscribe(onNext: {
+        print($0)
+    }).disposed(by: disposebag)
