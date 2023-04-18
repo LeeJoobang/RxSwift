@@ -20,7 +20,7 @@ class MainViewController: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
-        self.title = Constans.navTitle
+        self.title = Constans.mainTitle
         
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
@@ -43,8 +43,12 @@ class MainViewController: UIViewController {
     }
     
     @objc func addButtonClicked(){
-        print("clickec the button")
+        print("clicked the button")
+        let addTaskViewController = AddTaskViewController()
+        let navVC = UINavigationController(rootViewController: addTaskViewController)
+        present(navVC, animated: true)
     }
+
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource{

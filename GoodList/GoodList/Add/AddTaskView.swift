@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  AddTaskView.swift
 //  GoodList
 //
 //  Created by Joobang on 2023/04/18.
@@ -10,20 +10,20 @@ import UIKit
 
 import SnapKit
 
-class MainView: UIView{
+class AddTaskView: UIView{
     
     let segment: UISegmentedControl = {
-        let segmentItems = SegmentItem.allCases.map { $0.rawValue }
+        let segmentItems = SegmentItem.allCases.filter { $0 != .all }.map{$0.rawValue}
         let segment = UISegmentedControl(items: segmentItems)
         segment.selectedSegmentIndex = 0
         return segment
     }()
     
-    let tableView: UITableView = {
-        let tableView = UITableView(frame: .zero, style: .insetGrouped)
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-        return tableView
-        
+    let textfield: UITextField = {
+        let textfield = UITextField()
+        textfield.backgroundColor = .gray
+        textfield.borderStyle = .roundedRect
+        return textfield
     }()
     
     override init(frame: CGRect) {
@@ -37,7 +37,7 @@ class MainView: UIView{
     
     private func setupUI(){
         addSubview(segment)
-        addSubview(tableView)
+        addSubview(textfield)
         
         segment.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
@@ -45,10 +45,13 @@ class MainView: UIView{
             make.trailing.equalToSuperview().offset(-20)
         }
         
-        tableView.snp.makeConstraints { make in
-            make.top.equalTo(segment.snp.bottom).offset(30)
-            make.leading.trailing.bottom.equalToSuperview()
+        textfield.snp.makeConstraints { make in
+            make.top.equalTo(segment.snp.bottom).offset(100)
+            make.height.equalTo(30)
+            make.leading.equalToSuperview().offset(20)
+            make.trailing.equalToSuperview().offset(-20)
         }
+        
     }
     
     

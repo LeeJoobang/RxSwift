@@ -14,7 +14,11 @@ enum SegmentItem: String, CaseIterable{
     case low = "Low"
 }
 
+
+
 struct Constans {
     static let identifier = "Cell"
-    static let navTitle = "Good List"
+    static let mainTitle = "Good List"
+    static let addTaskTitle = "Add Task"
+
 }

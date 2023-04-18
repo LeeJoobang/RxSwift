@@ -10,6 +10,8 @@
 		5E7FFA173B82297079660DA1 /* Pods_GoodList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE4C68CD2FE22AEF7208B75 /* Pods_GoodList.framework */; };
 		70B8CECD728DE6965B6A9BAD /* Pods_GoodList_GoodListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B036AB9AAC64E9D2C4D0ACB7 /* Pods_GoodList_GoodListUITests.framework */; };
 		8F02498720FB3ECEEFA1D5CC /* Pods_GoodListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9A2B86F988DF82576C9001 /* Pods_GoodListTests.framework */; };
+		EB07D58729EEE32700F57733 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB07D58629EEE32700F57733 /* AddTaskViewController.swift */; };
+		EB07D58929EEE55B00F57733 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB07D58829EEE55B00F57733 /* AddTaskView.swift */; };
 		EB9E70C229EE67AF00F310CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E70C129EE67AF00F310CF /* MainViewController.swift */; };
 		EB9E70CA29EE919D00F310CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E70C929EE919D00F310CF /* Constants.swift */; };
 		EB9E70CC29EE938F00F310CF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E70CB29EE938F00F310CF /* MainView.swift */; };
@@ -49,6 +51,8 @@
 		4E9A2B86F988DF82576C9001 /* Pods_GoodListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		934E731E43444C536D345E7D /* Pods-GoodList-GoodListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodList-GoodListUITests.release.xcconfig"; path = "Target Support Files/Pods-GoodList-GoodListUITests/Pods-GoodList-GoodListUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B036AB9AAC64E9D2C4D0ACB7 /* Pods_GoodList_GoodListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodList_GoodListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB07D58629EEE32700F57733 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		EB07D58829EEE55B00F57733 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		EB9E70C129EE67AF00F310CF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		EB9E70C929EE919D00F310CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		EB9E70CB29EE938F00F310CF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -117,6 +121,8 @@
 		EB9E70C529EE6FFA00F310CF /* Add */ = {
 			isa = PBXGroup;
 			children = (
+				EB07D58629EEE32700F57733 /* AddTaskViewController.swift */,
+				EB07D58829EEE55B00F57733 /* AddTaskView.swift */,
 			);
 			path = Add;
 			sourceTree = "<group>";
@@ -455,6 +461,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				EB9E70CA29EE919D00F310CF /* Constants.swift in Sources */,
+				EB07D58929EEE55B00F57733 /* AddTaskView.swift in Sources */,
+				EB07D58729EEE32700F57733 /* AddTaskViewController.swift in Sources */,
 				EB9E70CC29EE938F00F310CF /* MainView.swift in Sources */,
 				EB9E70C229EE67AF00F310CF /* MainViewController.swift in Sources */,
 				EBC120A229EE57DC00B7EC99 /* AppDelegate.swift in Sources */,
