@@ -12,10 +12,12 @@ class AddTaskViewController: UIViewController{
     
     let addTaskView = AddTaskView()
     
+    let constants = Constants()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        self.title = Constans.addTaskTitle
+        self.title = constants.addTaskTitle
         setUI()
         saveButton()
     }

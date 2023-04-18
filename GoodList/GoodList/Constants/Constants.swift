@@ -14,11 +14,19 @@ enum SegmentItem: String, CaseIterable{
     case low = "Low"
 }
 
-
-
-struct Constans {
-    static let identifier = "Cell"
-    static let mainTitle = "Good List"
-    static let addTaskTitle = "Add Task"
-
+struct Constants {
+    let identifier = "Cell"
+    let mainTitle = "Good List"
+    let addTaskTitle = "Add Task"
+    
+    let autolayout = AutolayoutConstants()
+    
+    struct AutolayoutConstants {
+        let segmentTop: CGFloat = 20
+        let segmentHorizon: CGFloat = 20
+        let tableviewTop: CGFloat = 30
+        let textfieldSpace: CGFloat = 100
+        let textfieldHeight: CGFloat = 30
+        let textfieldHorizon: CGFloat = 20
+    }
 }

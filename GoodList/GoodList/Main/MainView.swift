@@ -12,6 +12,8 @@ import SnapKit
 
 class MainView: UIView{
     
+    let constants = Constants()
+    
     let segment: UISegmentedControl = {
         let segmentItems = SegmentItem.allCases.map { $0.rawValue }
         let segment = UISegmentedControl(items: segmentItems)
@@ -40,13 +42,13 @@ class MainView: UIView{
         addSubview(tableView)
         
         segment.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
-            make.leading.equalToSuperview().offset(20)
-            make.trailing.equalToSuperview().offset(-20)
+            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(constants.autolayout.segmentTop)
+            make.leading.equalToSuperview().offset(constants.autolayout.segmentHorizon)
+            make.trailing.equalToSuperview().offset(-constants.autolayout.segmentHorizon)
         }
         
         tableView.snp.makeConstraints { make in
-            make.top.equalTo(segment.snp.bottom).offset(30)
+            make.top.equalTo(segment.snp.bottom).offset(constants.autolayout.tableviewTop)
             make.leading.trailing.bottom.equalToSuperview()
         }
     }

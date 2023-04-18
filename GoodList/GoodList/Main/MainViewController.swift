@@ -13,6 +13,7 @@ import SnapKit
 class MainViewController: UIViewController {
     
     let mainView = MainView()
+    let constants = Constants()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,7 +21,7 @@ class MainViewController: UIViewController {
         
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.largeTitleDisplayMode = .automatic
-        self.title = Constans.mainTitle
+        self.title = constants.mainTitle
         
         mainView.tableView.delegate = self
         mainView.tableView.dataSource = self
@@ -57,7 +58,7 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constans.identifier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: constants.identifier, for: indexPath)
         cell.textLabel?.text = "textLabel: \(indexPath.row)"
         return cell
     }
