@@ -10,9 +10,11 @@
 		5E7FFA173B82297079660DA1 /* Pods_GoodList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECE4C68CD2FE22AEF7208B75 /* Pods_GoodList.framework */; };
 		70B8CECD728DE6965B6A9BAD /* Pods_GoodList_GoodListUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B036AB9AAC64E9D2C4D0ACB7 /* Pods_GoodList_GoodListUITests.framework */; };
 		8F02498720FB3ECEEFA1D5CC /* Pods_GoodListTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E9A2B86F988DF82576C9001 /* Pods_GoodListTests.framework */; };
+		EB9E70C229EE67AF00F310CF /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E70C129EE67AF00F310CF /* MainViewController.swift */; };
+		EB9E70CA29EE919D00F310CF /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E70C929EE919D00F310CF /* Constants.swift */; };
+		EB9E70CC29EE938F00F310CF /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9E70CB29EE938F00F310CF /* MainView.swift */; };
 		EBC120A229EE57DC00B7EC99 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC120A129EE57DC00B7EC99 /* AppDelegate.swift */; };
 		EBC120A429EE57DC00B7EC99 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC120A329EE57DC00B7EC99 /* SceneDelegate.swift */; };
-		EBC120A629EE57DC00B7EC99 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC120A529EE57DC00B7EC99 /* ViewController.swift */; };
 		EBC120A929EE57DC00B7EC99 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC120A729EE57DC00B7EC99 /* Main.storyboard */; };
 		EBC120AB29EE57DF00B7EC99 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EBC120AA29EE57DF00B7EC99 /* Assets.xcassets */; };
 		EBC120AE29EE57DF00B7EC99 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EBC120AC29EE57DF00B7EC99 /* LaunchScreen.storyboard */; };
@@ -47,10 +49,12 @@
 		4E9A2B86F988DF82576C9001 /* Pods_GoodListTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodListTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		934E731E43444C536D345E7D /* Pods-GoodList-GoodListUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoodList-GoodListUITests.release.xcconfig"; path = "Target Support Files/Pods-GoodList-GoodListUITests/Pods-GoodList-GoodListUITests.release.xcconfig"; sourceTree = "<group>"; };
 		B036AB9AAC64E9D2C4D0ACB7 /* Pods_GoodList_GoodListUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoodList_GoodListUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9E70C129EE67AF00F310CF /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		EB9E70C929EE919D00F310CF /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		EB9E70CB29EE938F00F310CF /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		EBC1209E29EE57DC00B7EC99 /* GoodList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoodList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBC120A129EE57DC00B7EC99 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EBC120A329EE57DC00B7EC99 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EBC120A529EE57DC00B7EC99 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EBC120A829EE57DC00B7EC99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EBC120AA29EE57DF00B7EC99 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EBC120AD29EE57DF00B7EC99 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -101,6 +105,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		EB9E70BD29EE671600F310CF /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				EB9E70C129EE67AF00F310CF /* MainViewController.swift */,
+				EB9E70CB29EE938F00F310CF /* MainView.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		EB9E70C529EE6FFA00F310CF /* Add */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		EB9E70C829EE918E00F310CF /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				EB9E70C929EE919D00F310CF /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		EBC1209529EE57DC00B7EC99 = {
 			isa = PBXGroup;
 			children = (
@@ -126,9 +154,11 @@
 		EBC120A029EE57DC00B7EC99 /* GoodList */ = {
 			isa = PBXGroup;
 			children = (
+				EB9E70C829EE918E00F310CF /* Constants */,
+				EB9E70C529EE6FFA00F310CF /* Add */,
+				EB9E70BD29EE671600F310CF /* Main */,
 				EBC120A129EE57DC00B7EC99 /* AppDelegate.swift */,
 				EBC120A329EE57DC00B7EC99 /* SceneDelegate.swift */,
-				EBC120A529EE57DC00B7EC99 /* ViewController.swift */,
 				EBC120A729EE57DC00B7EC99 /* Main.storyboard */,
 				EBC120AA29EE57DF00B7EC99 /* Assets.xcassets */,
 				EBC120AC29EE57DF00B7EC99 /* LaunchScreen.storyboard */,
@@ -164,7 +194,6 @@
 				03BF28186D688B5721F5D94B /* Pods-GoodListTests.debug.xcconfig */,
 				223F0D2264AA5EECF2FA42B4 /* Pods-GoodListTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -425,7 +454,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EBC120A629EE57DC00B7EC99 /* ViewController.swift in Sources */,
+				EB9E70CA29EE919D00F310CF /* Constants.swift in Sources */,
+				EB9E70CC29EE938F00F310CF /* MainView.swift in Sources */,
+				EB9E70C229EE67AF00F310CF /* MainViewController.swift in Sources */,
 				EBC120A229EE57DC00B7EC99 /* AppDelegate.swift in Sources */,
 				EBC120A429EE57DC00B7EC99 /* SceneDelegate.swift in Sources */,
 			);
