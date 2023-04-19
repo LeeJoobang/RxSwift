@@ -8,11 +8,16 @@
 import Foundation
 import UIKit
 
+import RxSwift
+import RxCocoa
+
 class AddTaskViewController: UIViewController{
     
     let addTaskView = AddTaskView()
-    
     let constants = Constants()
+    
+    let taskInfo = PublishSubject<(String, SegmentItem)>()
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +40,14 @@ class AddTaskViewController: UIViewController{
     }
     
     @objc func saveButtonClicked(){
-        print("clicked the button")
+        
+        let selectedIndex = addTaskView.segment.selectedSegmentIndex
+        let segmentValue = SegmentItem.allCases.filter { $0 != .all}[selectedIndex]
+        guard let taskText = addTaskView.textfield.text, !taskText.isEmpty else {
+            print("textfield text is empty")
+            return
+        }
+        taskInfo.onNext((taskText, segmentValue))
+        dismiss(animated: true)
     }
-
-    
 }

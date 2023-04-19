@@ -9,11 +9,17 @@ import Foundation
 import UIKit
 
 import SnapKit
+import RxSwift
+import RxCocoa
 
 class MainViewController: UIViewController {
     
     let mainView = MainView()
     let constants = Constants()
+    
+    let disposeBag = DisposeBag()
+    
+    var taskData = [(String, SegmentItem)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +53,14 @@ class MainViewController: UIViewController {
         print("clicked the button")
         let addTaskViewController = AddTaskViewController()
         let navVC = UINavigationController(rootViewController: addTaskViewController)
+        
+        addTaskViewController.taskInfo
+            .subscribe(onNext: {[weak self] tasktext, segmentValue in
+                print("taskText: \(tasktext)")
+                print("segment: \(segmentValue)")
+                self?.taskData.append((tasktext, segmentValue))
+                self?.mainView.tableView.reloadData()
+            }).disposed(by: disposeBag)
         present(navVC, animated: true)
     }
 
@@ -54,12 +68,14 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return taskData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: constants.identifier, for: indexPath)
-        cell.textLabel?.text = "textLabel: \(indexPath.row)"
+        let task = taskData[indexPath.row]
+        cell.textLabel?.text = task.0
+        cell.detailTextLabel?.text = task.1.rawValue
         return cell
     }
 }
