@@ -10,7 +10,7 @@
 | [3-1. Subjects](https://inframince.notion.site/3-Subjects-and-Operators-83bb3f94165747aba541b2cac67a45db) | Subject, PublishSubject, BehaviorSubject, BehaviorRelay, ReplaySubject | 23.4.13. |
 | [3-2. Operators(1)](https://www.notion.so/inframince/3-Subject-and-Operators-fbb81cc5adee46059581c448afdc82e2?pvs=4) |                          Filtering                           | 23.4.13. |
 | [3-2. Operators(2)](https://inframince.notion.site/3-Subject-and-Operators-fd03382ce9f64a9ab9c2ddf2ad05d4bc) |                   Transforming, Combining                    | 23.4.17  |
-|                       4 .Project Time                        |                                                              |          |
+| [4 .Project Time](https://www.notion.so/inframince/Good-List-931364b85d0d4b628bd92bacfb30c45b?pvs=4) |                    UISegementedController                    | 23.4.24  |
 |                  5. Transforming Operators                   |                                                              |          |
 |      6. Building News App Using Transforming Operators       |                                                              |          |
 |                      7. Error Handling                       |                                                              |          |
