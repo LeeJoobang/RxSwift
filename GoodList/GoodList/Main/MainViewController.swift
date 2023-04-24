@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     
     let disposeBag = DisposeBag()
     
-    var taskData = [(String, SegmentItem)]()
+    var taskInfo = [(String, SegmentItem)]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +58,7 @@ class MainViewController: UIViewController {
             .subscribe(onNext: {[weak self] tasktext, segmentValue in
                 print("taskText: \(tasktext)")
                 print("segment: \(segmentValue)")
-                self?.taskData.append((tasktext, segmentValue))
+                self?.taskInfo.append((tasktext, segmentValue))
                 self?.mainView.tableView.reloadData()
             }).disposed(by: disposeBag)
         present(navVC, animated: true)
@@ -68,12 +68,12 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskData.count
+        return taskInfo.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: constants.identifier, for: indexPath)
-        let task = taskData[indexPath.row]
+        let task = taskInfo[indexPath.row]
         cell.textLabel?.text = task.0
         cell.detailTextLabel?.text = task.1.rawValue
         return cell

@@ -40,7 +40,6 @@ class AddTaskViewController: UIViewController{
     }
     
     @objc func saveButtonClicked(){
-        
         let selectedIndex = addTaskView.segment.selectedSegmentIndex
         let segmentValue = SegmentItem.allCases.filter { $0 != .all}[selectedIndex]
         guard let taskText = addTaskView.textfield.text, !taskText.isEmpty else {
