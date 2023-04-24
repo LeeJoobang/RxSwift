@@ -20,7 +20,16 @@ class MainViewController: UIViewController {
     let disposeBag = DisposeBag()
     
     var taskInfo = [(String, SegmentItem)]()
+    var selectedSegment: SegmentItem = .all
     
+    var filteredSelectedItem: [(String, SegmentItem)] {
+        if selectedSegment == .all{
+            return taskInfo
+        } else {
+            return taskInfo.filter { $0.1 == selectedSegment}
+        }
+    }
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -35,7 +44,16 @@ class MainViewController: UIViewController {
         setUI()
         addButton()
         
+        mainView.segment.addTarget(self, action: #selector(segmentChanged) , for: .valueChanged)
     }
+    
+    @objc func segmentChanged(){
+        let index = mainView.segment.selectedSegmentIndex
+        selectedSegment = SegmentItem.allCases[index]
+        mainView.tableView.reloadData()
+    }
+    
+    
     
     func setUI(){
         view.addSubview(mainView)
@@ -68,14 +86,13 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskInfo.count
+        return filteredSelectedItem.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: constants.identifier, for: indexPath)
-        let task = taskInfo[indexPath.row]
+        let task = filteredSelectedItem[indexPath.row]
         cell.textLabel?.text = task.0
-        cell.detailTextLabel?.text = task.1.rawValue
         return cell
     }
 }
